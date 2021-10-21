@@ -68,18 +68,29 @@
     var url = form.action
     var xhr = new XMLHttpRequest()
     xhr.open("POST", url)
-    // xhr.withCredentials = true;
     xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         form.reset()
-        var formElements = form.querySelector(".form-section")
-        if (formElements) {
-          formElements.classList.add = "hidden" // hide form
+        let formLabelElements =
+          document.getElementsByClassName("form-label-div")
+        let formElements = document.getElementsByClassName("form-div")
+        if (formLabelElements && formElements) {
+          console.log("form-label-div & form-div hidden")
+          formLabelElements[0].classList.remove("flex")
+          formLabelElements[0].classList.remove("justify-start")
+          formLabelElements[0].classList.add("hidden") // hide form
+          formElements[0].classList.remove("flex")
+          formElements[0].classList.remove("justify-center")
+          formElements[0].classList.remove("items-center")
+          formElements[0].classList.add("hidden")
         }
-        var thankYouMessage = form.querySelector(".thankyou_section")
-        if (thankYouMessage) {
-          thankYouMessage.classList.remove = "hidden"
+        let thankYouMessages = document.getElementsByClassName("thankyou-div")
+        if (thankYouMessages) {
+          console.log("thankyou-div shown")
+          thankYouMessages[0].classList.remove("hidden")
+          thankYouMessages[0].classList.add("flex")
+          thankYouMessages[0].classList.add("justify-start")
         }
       }
     }
@@ -102,7 +113,7 @@
   document.addEventListener("DOMContentLoaded", loaded, false)
 
   function disableAllButtons(form) {
-    var buttons = form.querySelectorAll("button")
+    var buttons = form.querySelectorAll(".button")
     for (var i = 0; i < buttons.length; i++) {
       buttons[i].disabled = true
     }
