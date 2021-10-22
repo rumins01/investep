@@ -46,8 +46,8 @@
 
     // add form-specific values into the data
     formData.formDataNameOrder = JSON.stringify(fields)
-    formData.formGoogleSheetName = form.dataset.sheet || "stage01" // default sheet name
-    // formData.formGoogleSendEmail = form.dataset.email || "" // no email by default
+    formData.formGoogleSheetName = form.dataset.sheet || "response" // default sheet name
+    formData.service = form.dataset.service || "none"
 
     return { data: formData, honeypot: honeypot }
   }
