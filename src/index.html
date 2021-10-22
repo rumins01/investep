@@ -55,8 +55,9 @@
             text-2xl
             font-semibold
             text-white
+            cursor-pointer
           "
-          onclick="collapsedNavClose();"
+          onclick="collapsedNavClose(); checkAndToggleNavColor();"
         >
           <svg
             viewBox="0 0 100 100"
@@ -94,12 +95,13 @@
             flex
             justify-center
             items-center
+            cursor-pointer
             hover:bg-white hover:bg-opacity-90 hover:text-primary
           "
         >
           <a
             href="#feature-1"
-            onclick="changePageNumber(1); collapsedNavClose();"
+            onclick="collapsedNavClose(); checkAndToggleNavColor();"
             >features</a
           >
         </li>
@@ -110,10 +112,13 @@
             flex
             justify-center
             items-center
+            cursor-pointer
             hover:bg-white hover:bg-opacity-90 hover:text-primary
           "
         >
-          <a href="#benefit" onclick="changePageNumber(4); collapsedNavClose();"
+          <a
+            href="#benefit"
+            onclick="collapsedNavClose(); checkAndToggleNavColor();"
             >benefits</a
           >
         </li>
@@ -138,7 +143,7 @@
           <a
             href="#home"
             class="navbar-text text-2xl font-semibold text-white"
-            onclick="changePageNumber(0);"
+            onclick="checkAndToggleNavColor();"
             >Investep
           </a>
         </div>
@@ -155,34 +160,18 @@
             "
           >
             <li>
-              <a href="#feature-1" onclick="changePageNumber(1);">features</a>
-            </li>
-            <li class="hidden">
-              <a href="#feature-2" onclick="changePageNumber(2);">feature-2</a>
-            </li>
-            <li class="hidden">
-              <a href="#feature-3" onclick="changePageNumber(3);">feature-3</a>
-            </li>
-            <li>
-              <a href="#benefit" onclick="changePageNumber(4);">benefits</a>
-            </li>
-            <li class="hidden">
-              <a href="#early-access" onclick="changePageNumber(5);"
-                >early-access</a
+              <a href="#feature-1" onclick="checkAndToggleNavColor();"
+                >features</a
               >
             </li>
-            <li class="hidden">
-              <a href="#early-access-done" onclick="changePageNumber(5);"
-                >early access</a
+            <li>
+              <a href="#benefit" onclick="checkAndToggleNavColor();"
+                >benefits</a
               >
             </li>
           </ul>
           <div class="flex space-x-4 justify-between items-center">
-            <a
-              href="#early-access"
-              onclick="changePageNumber(5);"
-              class="hidden sm:block"
-            >
+            <a href="#early-access" class="hidden sm:block">
               <button
                 class="
                   navbar-button
@@ -195,11 +184,12 @@
                   hover:bg-white hover:tex-primaryt
                   focus:outline-none
                 "
+                onclick="checkAndToggleNavColor();"
               >
                 get early access
               </button>
             </a>
-            <div class="sm:hidden" onclick="collapsedNavOpen();">
+            <div class="sm:hidden cursor-pointer" onclick="collapsedNavOpen();">
               <svg
                 viewBox="0 0 100 80"
                 width="24"
@@ -501,7 +491,7 @@
         </div>
       </section>
     </main>
-    <footer class="w-full h-32 bg-gray-400"></footer>
+    <footer class="w-full h-32 bg-gray-600"></footer>
     <script type="text/javascript" src="index.js"></script>
     <script
       data-cfasync="false"
