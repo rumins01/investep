@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Investep - 가이드 투자</title>
+    <title>Investep - 투자자들을 위한 가장 체계적인 가이드</title>
     <meta name="description" content="Basic HTML/Tailwind starter" />
     <meta name="author" content="Daily Dev Tips" />
     <meta
@@ -181,7 +181,7 @@
                   rounded
                   text-white
                   font-semibold
-                  hover:bg-white hover:tex-primaryt
+                  hover:bg-white hover:text-primary
                   focus:outline-none
                 "
                 onclick="checkAndToggleNavColor();"
@@ -397,15 +397,16 @@
               md:text-3xl md:leading-relaxed
             "
           >
-            Investep을 가장 빠르게 만나보세요<br />출시되면 첫 번째로
-            알려드릴게요
+            <span class="text-primary font-semibold">Investep</span>을 가장
+            빠르게 만나보세요<br />출시되면 첫 번째로 알려드릴게요
           </h4>
         </div>
         <form
           id="earlyAccessForm"
           name="earlyAccessForm"
-          action="https://script.google.com/macros/s/AKfycbwkul0yx45qEYLclW63sPvPLJGSsjRk5N-ToXmtjPmMqo3SkAo0Pz_UP7idanaW1dgD/exec"
+          action="https://script.google.com/macros/s/AKfycbwgOc7GE0Gc4cV896Ev5Om9TdhIscjswj6-gAntvyFex3QCF-f7g7zrHD_JYFi-DdoldA/exec"
           method="POST"
+          data-service="investep"
           class="
             gform
             form-div
@@ -442,6 +443,13 @@
               focus:outline-none focus:border-primary
             "
             placeholder="이메일 입력하고 사전 등록하기"
+          />
+          <input
+            id="honeypot"
+            type="text"
+            name="honeypot"
+            value=""
+            class="hidden"
           />
           <input
             type="submit"
@@ -486,7 +494,7 @@
               md:text-3xl md:leading-relaxed
             "
           >
-            감사합니다<br />서비스가 준비되면 가장 먼저 알려드릴게요 :)
+            감사합니다 ;)<br />서비스가 준비되면 가장 먼저 알려드릴게요
           </h4>
         </div>
       </section>
